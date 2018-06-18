@@ -4,32 +4,40 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Random;
 
-import javax.swing.JOptionPane;
-
 import domain.AccountBean;
+import domain.MinusAccountBean;
 import service.AccountService;
 public class AccountServiceImpl implements AccountService{
 
-	AccountBean[] arr;
-	int count;
+	AccountBean[] accountArr;
+	MinusAccountBean[] minusArr;
+	int countAccount, countMinusAccount;
 	
 	public AccountServiceImpl () {
-		arr = new AccountBean[5];
+		accountArr = new AccountBean[5];
+		minusArr = new MinusAccountBean[5];
 	}
 	@Override
-	public void addList(AccountBean account) {
-		arr[count++] = account; 
+	public void addAccountList(AccountBean account) {
+		accountArr[countAccount++] = account; 
 	}
-	@Override
+	public void addMinusAccountList(AccountBean minusAccount) {
+		minusArr[countMinusAccount++] = (MinusAccountBean) minusAccount;
+	}
+	/*@Override
+	public MinusAccountBean[] list() {
+		return (MinusAccountBean[]) accountArr;
+	}*/
+	
 	public AccountBean[] list() {
-		return arr;
+		return accountArr;
 	}
 	public int authentication(AccountBean account) {
 		int correct=0;
-		for(int i=0;i<count;i++) {
-			if(account.getName().equals(arr[i].getName()) &&  
-			   account.getUid().equals(arr[i].getUid()) &&
-			   account.getUPasswd().equals(arr[i].getUPasswd())) {
+		for(int i=0;i<countAccount;i++) {
+			if(account.getName().equals(accountArr[i].getName()) &&  
+			   account.getUid().equals(accountArr[i].getUid()) &&
+			   account.getUPasswd().equals(accountArr[i].getUPasswd())) {
 			   correct=i;
 			   break;
 			} else {
@@ -40,17 +48,17 @@ public class AccountServiceImpl implements AccountService{
 		}
 	@Override
 	public void deposit(int authentication, int money) {
-		arr[authentication].setRestMoney(money); 
+		accountArr[authentication].setRestMoney(money); 
 		//JOptionPane.showMessageDialog(null, account.DEPOSIT_SUCCESS);
 	}
 
 	@Override
 	public void withdraw(int authentication, int money) {
-		if(arr[authentication].getRestMoney()<money) {
+		if(accountArr[authentication].getRestMoney()<money) {
 			//JOptionPane.showMessageDialog(null, account.WITHDRAW_FAIL);
 		} else {
-			arr[authentication].setRestMoney(
-					arr[authentication].getRestMoney()-money);
+			accountArr[authentication].setRestMoney(
+					accountArr[authentication].getRestMoney()-money);
 			//2JOptionPane.showMessageDialog(null, account.WITHDRAW_SUCCESS);
 		}
 	}
@@ -63,9 +71,14 @@ public class AccountServiceImpl implements AccountService{
 	public void createAccount(AccountBean account) {
 		account.setDate(createDate());
 		account.setAccountNum(createAccountNum());
-		addList(account);
+		addAccountList(account);
 	}
-
+	@Override
+	public void createMinusAccount(AccountBean minusAccount) {
+		minusAccount.setDate(createDate());
+		minusAccount.setAccountNum(createAccountNum());
+		addAccountList((MinusAccountBean)minusAccount);
+	}
 	@Override
 	public String createAccountNum() {
 		Random randomAccNo = new Random();
@@ -84,19 +97,19 @@ public class AccountServiceImpl implements AccountService{
 	    		.format(new Date());
 	}
 
-	@Override
+	/*@Override
 	public String showResult() {
 		String result="";
 		for(int i=0;i<count;i++) {
 			result += arr[i];
 		}
 		return result;
-		}
+		}*/
 	@Override
-	public int countSameWord(String name) {
+	public int countSameWord(String word) {
 		int countSameName = 0;
-		for(int i=0;i<count;i++) {
-			if(name.equals(arr[i].getName())) {
+		for(int i=0;i<countAccount;i++) {
+			if(word.equals(accountArr[i].getName())) {
 				countSameName++; 
 			}
 		}
@@ -106,12 +119,13 @@ public class AccountServiceImpl implements AccountService{
 	public AccountBean[] findByName(String name) {
 		int sameNameCount = 0;
 		AccountBean findByNameArr[] = new AccountBean[countSameWord(name)];
-		for(int i=0;i<count;i++) {
-			if(name.equals(arr[i].getName())) {
-				findByNameArr[sameNameCount++] = arr[i];
+		for(int i=0;i<countAccount;i++) {
+			if(name.equals(accountArr[i].getName())) {
+				findByNameArr[sameNameCount++] = accountArr[i];
 			}
 		}
 		return findByNameArr;
 	}
+	
 	
 }

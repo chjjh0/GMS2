@@ -6,14 +6,15 @@ import domain.*;
 import service.*;
 import serviceImpl.*;
 public class AccountController {
-	enum select{EXIT,ACCOUNT,MINUS_ACCOUNT,DEPOSIT,WITHDRAW,LIST,FINDBYNAME};
+	enum select{EXIT,ACCOUNT,MINUS_ACCOUNT,MINUS_LIST,DEPOSIT,WITHDRAW,LIST,FIND_BY_NAME};
 	public static void main(String[] args) {
 		select[] selection = {
-                select.EXIT,select.ACCOUNT,select.MINUS_ACCOUNT,
-                select.DEPOSIT,select.WITHDRAW,select.LIST, select.FINDBYNAME
+                select.EXIT,select.ACCOUNT,select.MINUS_ACCOUNT, select.MINUS_LIST,
+                select.DEPOSIT,select.WITHDRAW,select.LIST, select.FIND_BY_NAME, 
         };
 		AccountServiceImpl service = new AccountServiceImpl();
 		AccountBean account = null;
+
 		while(true) {
 			select option = (select)JOptionPane.showInputDialog(
                     null,
@@ -31,6 +32,14 @@ public class AccountController {
 			service.createAccount(account);
 			break;
 		case MINUS_ACCOUNT :
+			account = new MinusAccountBean();
+			account.setName(JOptionPane.showInputDialog("이름"));
+			account.setUid(JOptionPane.showInputDialog("ID"));
+			account.setUpasswd(JOptionPane.showInputDialog("비밀번호"));
+			service.createMinusAccount(account);
+			break;
+		case MINUS_LIST :
+			JOptionPane.showMessageDialog(null, service.list());
 			break;
 		case DEPOSIT :
 			account = new AccountBean();
@@ -49,11 +58,10 @@ public class AccountController {
 					Integer.parseInt(JOptionPane.showInputDialog("출금액을 입력하세요")));
 			break;
 		case LIST :
-			JOptionPane.showMessageDialog(null, service.showResult());
+			//JOptionPane.showMessageDialog(null, service.showResult());
 			break;
-		case FINDBYNAME :
-			account = new AccountBean();
-			JOptionPane.showMessageDialog(null, service.findByName((JOptionPane.showInputDialog("이름"))));
+		case FIND_BY_NAME :
+			JOptionPane.showMessageDialog(null, service.findByName(JOptionPane.showInputDialog("이름")));
 			break;
 		}	
 			
