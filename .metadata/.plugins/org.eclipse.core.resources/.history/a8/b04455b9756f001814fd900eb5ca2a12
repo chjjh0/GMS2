@@ -1,0 +1,7 @@
+package domain;
+
+public class MinusAccount extends Account{
+public void setBalance() {
+	balance += "-";
+}
+}

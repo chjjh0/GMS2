@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="javax.swing.SwingWorker"/>
+<fullyQualifiedTypeName name="javax.print.attribute.standard.JobPriority"/>
+<fullyQualifiedTypeName name="domain.Salary"/>
+<fullyQualifiedTypeName name="java.lang.String"/>
+<fullyQualifiedTypeName name="java.util.Arrays"/>
+<fullyQualifiedTypeName name="domain.Lotto"/>
+<fullyQualifiedTypeName name="domain.Phone"/>
+<fullyQualifiedTypeName name="domain.CellPhone"/>
+<fullyQualifiedTypeName name="service.AccountService"/>
+<fullyQualifiedTypeName name="domain.Account"/>
+<fullyQualifiedTypeName name="javax.swing.JOptionPane"/>
+</qualifiedTypeNameHistroy>

@@ -1,0 +1,10 @@
+package domain;
+
+public class MinusAccount extends Account{
+	public void setBalance(String balance) {
+		this.balance += "-" + balance + "원";
+	}
+	public String getBalance() {
+		
+	}
+}

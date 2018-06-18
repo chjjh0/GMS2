@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.ui.texteditor.GotoLineAction$GotoLineDialog_dialogBounds">
+		<item value="569" key="DIALOG_X_ORIGIN"/>
+		<item value="314" key="DIALOG_Y_ORIGIN"/>
+	</section>
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
+		<item value="false" key="isRegEx"/>
+		<item value="select" key="selection"/>
+		<item value="false" key="casesensitive"/>
+		<item value="false" key="incremental"/>
+		<item value="true" key="wrap"/>
+		<item value="false" key="wholeword"/>
+		<list key="findhistory">
+			<item value="butt"/>
+			<item value="setMoney"/>
+			<item value="bmi"/>
+			<item value="param"/>
+			<item value="A"/>
+			<item value="q"/>
+			<item value="temp"/>
+			<item value="i"/>
+			<item value="num2"/>
+			<item value="num1"/>
+			<item value="result2"/>
+			<item value="result1"/>
+		</list>
+		<list key="replacehistory">
+			<item value="select"/>
+			<item value="a"/>
+			<item value="array"/>
+			<item value="plus"/>
+			<item value="end"/>
+			<item value="start"/>
+			<item value="evenResult"/>
+			<item value="oddResult"/>
+		</list>
+	</section>
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
+		<item value="288" key="DIALOG_WIDTH"/>
+		<item value="1|맑은 고딕|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|맑은 고딕" key="DIALOG_FONT_NAME"/>
+		<item value="390" key="DIALOG_HEIGHT"/>
+		<item value="202" key="DIALOG_X_ORIGIN"/>
+		<item value="224" key="DIALOG_Y_ORIGIN"/>
+	</section>
+</section>

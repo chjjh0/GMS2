@@ -1,0 +1,29 @@
+package domain;
+
+public class Phone {
+   String name, phoneNum, kind, call; 
+   static String brand="삼성";
+   
+   
+   public void setName(String name) {
+		this.name=name;
+   }
+   public void setphoneNum(String phoneNum) {
+		this.phoneNum=phoneNum;
+   }
+   public void setKind(String kind) {
+		this.kind=kind;
+   }
+   public void setCall(String call) {
+		this.call=call;
+   }
+   
+   
+   public String toString() {
+      return String.format("%s 에게 %s 번호로  %s제품  %s를 사용해서 %s 라고 통화했다.",
+      name, phoneNum, brand, kind, call);
+      
+      //홍길동, 010-1234-5678, 삼성, 집전화기, 2시에만나
+      //이름 , 전화번호, 제조사, 제품종류, 통화내용
+   }
+}

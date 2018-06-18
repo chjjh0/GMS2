@@ -1,0 +1,40 @@
+package ui;
+
+import javax.swing.JOptionPane;
+import domain.Account;
+
+enum BankButt {
+	EXIT,
+	BANK_INPUT,
+	BANK_OUTPUT,
+}
+public class BankMain {
+public static void main(String[] args) {
+	BankButt[] bankbuttons = {
+			   BankButt.EXIT,
+			   BankButt.BANK_INPUT,
+			   BankButt.BANK_OUTPUT,
+		};
+	Account account;
+	while(true) {
+        switch((BankButt)JOptionPane.showInputDialog(
+					null,	//frame
+					"MATRIX PAGE", //frame title
+					"SELECT MATRIX MENU", //ORDER
+					JOptionPane.QUESTION_MESSAGE, //type
+					null, //icon
+					bankbuttons, //array of choices
+					null //default
+					)) {
+        case EXIT : return;
+        case BANK_INPUT : 
+       	 account = new Account();
+       	 phone.setName(JOptionPane.showInputDialog("이름을 입력하세요"));
+       	 phone.setPhoneNum(JOptionPane.showInputDialog("전화번호를 입력하세요"));
+       	 phone.setCall(JOptionPane.showInputDialog("통화내용을 입력하세요"));
+       	 JOptionPane.showMessageDialog(null, phone.toString());
+       	 break;
+       	default : break;
+}
+}
+}

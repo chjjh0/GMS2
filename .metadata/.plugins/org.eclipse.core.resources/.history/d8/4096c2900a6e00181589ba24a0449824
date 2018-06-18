@@ -1,0 +1,45 @@
+package ui;
+
+import javax.swing.JOptionPane;
+import domain.Phone;
+enum Phone_Butt {
+	EXIT,
+	TELEPHONE,
+	SMARTPHONE,
+}	
+public class PhoneMain {
+   //0. 통화종료
+   //1. 
+   public static void main(String[] args) {
+	   Phone_Butt[] buttons = {
+			   Phone_Butt.EXIT,
+			   Phone_Butt.TELEPHONE,
+			   Phone_Butt.SMARTPHONE,
+		};
+	  Phone phone;
+      while(true) {
+         switch((Phone_Butt)JOptionPane.showInputDialog(
+					null,	//frame
+					"MATRIX PAGE", //frame title
+					"SELECT MATRIX MENU", //ORDER
+					JOptionPane.QUESTION_MESSAGE, //type
+					null, //icon
+					buttons, //array of choices
+					null //default
+					)) {
+         case EXIT : return;
+         case TELEPHONE : 
+        	 phone = new Phone();
+        	 phone.setName(JOptionPane.showInputDialog("이름을 입력하세요"));
+        	 phone.setphoneNum(JOptionPane.showInputDialog("전화번호를 입력하세요"));
+        	 
+        	 break;
+         case SMARTPHONE :
+        	 break;
+         default: 
+            break;
+         }
+      }
+
+   }
+}

@@ -1,0 +1,14 @@
+package domain;
+public class GalaxyPhone extends CellPhone{
+	//홍길동%s에게 010번호%s로 삼성%s 제품 6인치%s 
+	// 갤럭시노트%s를 사용해서 이동가능%s한 상태로
+	// 안녕%s이라고 카톡%s했다.
+	private String phoneSize, kaTalk;
+	public void setPhoneSize() {
+		phoneSize;
+	}
+	public void kaTalk() {
+		
+	}
+
+}

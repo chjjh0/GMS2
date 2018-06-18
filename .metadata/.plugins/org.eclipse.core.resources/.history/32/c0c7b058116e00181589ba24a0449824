@@ -1,0 +1,5 @@
+package domain;
+
+public class CellPhone extends Phone{
+	static final String BRAND = "NOKIA", KIND = "SMARTPHONE";
+}
