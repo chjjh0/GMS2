@@ -1,7 +1,0 @@
-package domain;
-
-public class IPhone extends CellPhone{
-	public String toString() {
-		
-	} 
-}

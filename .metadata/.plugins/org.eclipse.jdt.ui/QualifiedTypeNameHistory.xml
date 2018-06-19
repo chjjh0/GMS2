@@ -10,6 +10,8 @@
 <fullyQualifiedTypeName name="domain.CellPhone"/>
 <fullyQualifiedTypeName name="service.AccountService"/>
 <fullyQualifiedTypeName name="domain.Account"/>
-<fullyQualifiedTypeName name="javax.swing.JOptionPane"/>
 <fullyQualifiedTypeName name="domain.MinusAccountBean"/>
+<fullyQualifiedTypeName name="domain.MemberBean"/>
+<fullyQualifiedTypeName name="service.MemberService"/>
+<fullyQualifiedTypeName name="javax.swing.JOptionPane"/>
 </qualifiedTypeNameHistroy>

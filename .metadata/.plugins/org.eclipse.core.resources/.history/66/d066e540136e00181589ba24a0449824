@@ -1,9 +1,0 @@
-package domain;
-
-public class CellPhone extends Phone{
-	static final String BRAND = "NOKIA", KIND = "SMARTPHONE";
-	public String toString() {
-		      return String.format("[ %s ] 에게  [ %s ] 번호로 [ %s ] 제품  [ %s ] 를 사용해서 [ %s ] 라고 통화했다.",
-		      super.getName(), super.getPhoneNum(), BRAND, KIND, super.getCall());
-	}
-}

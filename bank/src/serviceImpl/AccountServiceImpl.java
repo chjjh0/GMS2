@@ -67,7 +67,6 @@ public class AccountServiceImpl implements AccountService{
 	public String createRandom(int start, int end) {
 		return null;
 	}
-
 	@Override
 	public void createAccount(AccountBean account) {
 		account.setDate(createDate());
@@ -96,7 +95,6 @@ public class AccountServiceImpl implements AccountService{
 		return new SimpleDateFormat("yyyy년 MM월 dd일")
 	    		.format(new Date());
 	}
-
 	/*@Override
 	public String showResult() {
 		String result="";
@@ -109,7 +107,7 @@ public class AccountServiceImpl implements AccountService{
 	public int countSameWord(String word) {
 		int countSameName = 0;
 		for(int i=0;i<countAccount;i++) {
-			if(word.equals(accountArr[i].getName())) {
+			if(word.equals(accountArr[i].getUid())) {
 				countSameName++; 
 			}
 		}

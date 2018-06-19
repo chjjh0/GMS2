@@ -1,7 +1,0 @@
-package domain;
-
-public class IPhone{
-	public String toString() {
-		return String.format("", );
-	} 
-}

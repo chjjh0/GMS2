@@ -1,5 +1,0 @@
-package domain;
-public class GalaxyPhone extends CellPhone{
-	private String phoneSize, kaTalk;
-
-}
