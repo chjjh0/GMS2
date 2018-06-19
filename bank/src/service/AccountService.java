@@ -18,4 +18,5 @@ public interface AccountService {
 	//public String showResult();
 	public int countSameWord(String word);
 	public AccountBean[] findByName(String name);
+	public String changePass(int authentication, AccountBean account);
 }

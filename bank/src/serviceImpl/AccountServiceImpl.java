@@ -4,6 +4,8 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Random;
 
+import javax.swing.JOptionPane;
+
 import domain.AccountBean;
 import domain.MinusAccountBean;
 import service.AccountService;
@@ -35,8 +37,7 @@ public class AccountServiceImpl implements AccountService{
 	public int authentication(AccountBean account) {
 		int correct=0;
 		for(int i=0;i<countAccount;i++) {
-			if(account.getName().equals(accountArr[i].getName()) &&  
-			   account.getUid().equals(accountArr[i].getUid()) &&
+			if(account.getUid().equals(accountArr[i].getUid()) &&
 			   account.getUPasswd().equals(accountArr[i].getUPasswd())) {
 			   correct=i;
 			   break;
@@ -90,7 +91,6 @@ public class AccountServiceImpl implements AccountService{
 		}
 		return accountNo;
 	}
-
 	@Override
 	public String createDate() {
 		return new SimpleDateFormat("yyyy년 MM월 dd일")
@@ -126,6 +126,16 @@ public class AccountServiceImpl implements AccountService{
 		}
 		return findByNameArr;
 	}
-	
-	
+	@Override
+	public String changePass(int authentication, AccountBean account) {
+		String msg = "";
+		if(account.equals(accountArr[authentication].getUPasswd())) {
+				msg = "기존 비밀번호와 같습니다, 다르게 입력해주세요";
+			} else {
+				String temp = account.getUPasswd();
+				msg = "비밀번호 변경 성공";
+				accountArr[authentication].setUpasswd(temp);
+			}
+		return msg;
+	}
 }
