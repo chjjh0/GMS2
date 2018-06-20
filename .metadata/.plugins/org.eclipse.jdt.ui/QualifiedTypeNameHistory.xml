@@ -13,5 +13,7 @@
 <fullyQualifiedTypeName name="domain.MinusAccountBean"/>
 <fullyQualifiedTypeName name="domain.MemberBean"/>
 <fullyQualifiedTypeName name="service.MemberService"/>
+<fullyQualifiedTypeName name="java.lang.Character"/>
+<fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="javax.swing.JOptionPane"/>
 </qualifiedTypeNameHistroy>

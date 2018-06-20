@@ -35,15 +35,14 @@ public class MemberServiceImpl implements MemberService{
 	}
 	@Override
 	public MemberBean findById(String uid) {
-		MemberBean arrUid = new MemberBean();
-		int countArrUid = 0;
+		MemberBean searchUid = new MemberBean();
 		for(int i=0;i<countMember;i++){
 			if(uid.equals(arr[i].getUid())){
-				arrUid = arr[i];
+				searchUid = arr[i];
 				break;
 			}
 		}
-		return arrUid;
+		return searchUid;
 	}
 	@Override
 	public int countSameName(String name) {
