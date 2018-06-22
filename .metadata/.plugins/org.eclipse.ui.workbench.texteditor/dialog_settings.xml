@@ -6,29 +6,32 @@
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="staft" key="selection"/>
+		<item value="member" key="selection"/>
 		<item value="true" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="user"/>
+			<item value="main"/>
+			<item value="member"/>
+			<item value="add"/>
+			<item value="list"/>
+			<item value="date"/>
+			<item value="등록"/>
+			<item value="Txt"/>
+			<item value="추가"/>
+			<item value="combo"/>
+			<item value="combo = new JComboBox&lt;&gt;(menu);"/>
+			<item value="map"/>
 			<item value="step"/>
 			<item value="arr"/>
-			<item value="list"/>
 			<item value="select"/>
-			<item value="="/>
-			<item value="auth"/>
-			<item value="authenti"/>
-			<item value="authti"/>
-			<item value="&quot;count&quot;"/>
-			<item value="count"/>
-			<item value="FINDBYNAME"/>
-			<item value="findbyname"/>
-			<item value="find"/>
-			<item value="butt"/>
-			<item value="setMoney"/>
 		</list>
 		<list key="replacehistory">
+			<item value="member"/>
+			<item value="m"/>
+			<item value="admin"/>
 			<item value="staft"/>
 			<item value="ataft"/>
 			<item value="arrUid"/>
@@ -41,8 +44,6 @@
 			<item value="plus"/>
 			<item value="end"/>
 			<item value="start"/>
-			<item value="evenResult"/>
-			<item value="oddResult"/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">

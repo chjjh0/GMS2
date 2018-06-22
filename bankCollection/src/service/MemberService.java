@@ -1,13 +1,9 @@
 package service;
 import java.util.List;
-
 import domain.*;
 public interface MemberService {
-	public void createUser(UserBean user);
-	public void createStep(StaftBean step);
-	public List<MemberBean> list();
-	public List<MemberBean> search(String param);
-	public MemberBean search(MemberBean member);
-	public void update(MemberBean member);
-	public void delete(MemberBean member);
+	public void createUser(UserBean member);
+	public String login(MemberBean member);
+	public void updatePassword(MemberBean member);
+	public void deleteMember(MemberBean member);
 }

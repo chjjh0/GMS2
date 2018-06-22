@@ -1,8 +1,0 @@
-package service;
-
-public interface AccountService {
-	public int deposit(String money);
-	public int withdraw(String money);
-	public String createAccount();
-
-}
