@@ -6,12 +6,14 @@
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="member" key="selection"/>
+		<item value="createAccount" key="selection"/>
 		<item value="true" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="createAccount"/>
+			<item value="[0]"/>
 			<item value="user"/>
 			<item value="main"/>
 			<item value="member"/>
@@ -25,8 +27,6 @@
 			<item value="combo = new JComboBox&lt;&gt;(menu);"/>
 			<item value="map"/>
 			<item value="step"/>
-			<item value="arr"/>
-			<item value="select"/>
 		</list>
 		<list key="replacehistory">
 			<item value="member"/>

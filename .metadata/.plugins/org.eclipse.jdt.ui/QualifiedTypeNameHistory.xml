@@ -29,13 +29,13 @@
 <fullyQualifiedTypeName name="javax.swing.JTextField"/>
 <fullyQualifiedTypeName name="javax.swing.JPanel"/>
 <fullyQualifiedTypeName name="javax.swing.JOptionPane"/>
-<fullyQualifiedTypeName name="serviceImpl.MemberServiceImpl"/>
 <fullyQualifiedTypeName name="service.MemberService"/>
 <fullyQualifiedTypeName name="domain.MemberBean"/>
 <fullyQualifiedTypeName name="domain.UserBean"/>
-<fullyQualifiedTypeName name="serviceImpl.AdminServiceImpl"/>
 <fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="controller.MemberController"/>
 <fullyQualifiedTypeName name="repository.MemberDAO"/>
 <fullyQualifiedTypeName name="repositoryImpl.MemberDAOImpl"/>
+<fullyQualifiedTypeName name="serviceImpl.MemberServiceImpl"/>
+<fullyQualifiedTypeName name="serviceImpl.AdminServiceImpl"/>
 </qualifiedTypeNameHistroy>

@@ -15,7 +15,7 @@ public class OpenAccount extends JFrame{
 	private static final long serialVersionUID = 1L;
 	JLabel topLab, idLab,passLab, nameLab, phoneLab, 
 		addrLab, ssnLab, emailLab;
-	JTextField accountNoTxt, nameTxt, idTxt, passTxt, dateTxt, moneyTxt;
+	JTextField accountNoTxt, ssnTxt, phoneTxt, emailTxt, addrTxt, nameTxt, idTxt, passTxt, dateTxt, moneyTxt;
 	JButton addBtn;
 	JPanel bottomPan, centerPan, idPan, passPan, 
 		namePan, phonePan, addrPan, ssnPan, emailPan;
@@ -101,7 +101,7 @@ public class OpenAccount extends JFrame{
 				member.setName(passTxt.getText());
 				member.setPass(dateTxt.getText());
 				if(((String) combo.getSelectedItem()).equals(menu[0])){
-					MemberController.getInstance().createAccount(member);
+					//MemberController.getInstance().createAccount(member);
 				}else{
 					//AccountServiceImpl.getInstance().getcreateStaff( member);
 				}
