@@ -1,11 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+		<item value="C:\Users\1027\JavaWorkspace\workspace\GMS0716_back"/>
+		<item value="C:\Users\1027\JavaWorkspace\workspace\GMSd"/>
+		<item value="C:\Users\1027\JavaWorkspace\GMS-Model1"/>
+		<item value="C:\Users\1027\JavaWorkspace\workspace\GMS-1\src"/>
+		<item value="C:\Users\1027\JavaWorkspace\workspace\GMS-1"/>
+		<item value="C:\Users\1027\JavaWorkspace\workspace\GMS"/>
+		<item value="C:\Users\1027\JavaWorkspace\bankCollection"/>
 		<item value="C:\Users\1027\JavaWorkspace\workspace\bankCollection"/>
 		<item value="C:\Users\1027\JavaWorkspace\workspace\bank"/>
 		<item value="C:\Users\1027\JavaWorkspace\workspace\basic"/>
 		<item value="C:\Users\1027\JavaWorkspace\workspace\basic\src"/>
 	</list>
+	<section name="CleanDialogSettings">
+		<item value="500" key="DIALOG_WIDTH"/>
+		<item value="false" key="TOGGLE_SELECTED"/>
+		<item value="401" key="DIALOG_HEIGHT"/>
+		<item value="550" key="DIALOG_X_ORIGIN"/>
+		<item value="163" key="DIALOG_Y_ORIGIN"/>
+	</section>
+	<section name="ExternalProjectImportWizard">
+		<item value="false" key="WizardProjectsImportPage.STORE_NESTED_PROJECTS"/>
+		<item value="false" key="WizardProjectsImportPage.STORE_COPY_PROJECT_ID"/>
+		<item value="false" key="WizardProjectsImportPage.STORE_ARCHIVE_SELECTED"/>
+		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
+			<item value="C:\Users\1027\JavaWorkspace\workspace\GMS2-master"/>
+			<item value="C:\Users\1027\JavaWorkspace\workspace\GMS-Model2"/>
+			<item value="C:\Users\1027\JavaWorkspace\workspace\GMSd"/>
+			<item value="C:\Users\1027\JavaWorkspace\jeeworkspace\bankCollection"/>
+		</list>
+		<list key="WizardProjectsImportPage.STORE_ARCHIVES">
+			<item value=""/>
+			<item value="C:\Users\1027\JavaWorkspace\workspace\BAnkWeb\src\sql\Member.sql"/>
+		</list>
+	</section>
+	<section name="ResourceNavigator">
+		<item value="Aggregate for window 1527666826331" key="ResourceWorkingSetFilter.STORE_WORKING_SET"/>
+		<item value="1" key="ResourceViewer.STORE_SORT_TYPE"/>
+	</section>
 	<section name="NewWizardAction">
 		<item value="org.eclipse.jdt.ui.wizards.JavaProjectWizard" key="NewWizardSelectionPage.STORE_SELECTED_ID"/>
 		<list key="NewWizardSelectionPage.STORE_EXPANDED_CATEGORIES_ID">

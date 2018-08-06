@@ -4,31 +4,39 @@
 		<item value="569" key="DIALOG_X_ORIGIN"/>
 		<item value="314" key="DIALOG_Y_ORIGIN"/>
 	</section>
+	<section name="org.eclipse.jst.jsp.ui.internal.preferences.ui.JSPTemplatePreferencePage$JSPEditTemplateDialog_dialogBounds">
+		<item value="612" key="DIALOG_WIDTH"/>
+		<item value="1|맑은 고딕|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|맑은 고딕" key="DIALOG_FONT_NAME"/>
+		<item value="435" key="DIALOG_HEIGHT"/>
+		<item value="46" key="DIALOG_X_ORIGIN"/>
+		<item value="140" key="DIALOG_Y_ORIGIN"/>
+	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="createAccount" key="selection"/>
+		<item value="" key="selection"/>
 		<item value="true" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
-			<item value="createAccount"/>
-			<item value="[0]"/>
-			<item value="user"/>
-			<item value="main"/>
-			<item value="member"/>
+			<item value="getpa"/>
+			<item value="==="/>
+			<item value="=="/>
+			<item value="loca"/>
+			<item value="box"/>
+			<item value="pagebox"/>
+			<item value="idoption"/>
+			<item value="x"/>
+			<item value="form"/>
 			<item value="add"/>
-			<item value="list"/>
-			<item value="date"/>
-			<item value="등록"/>
-			<item value="Txt"/>
-			<item value="추가"/>
-			<item value="combo"/>
-			<item value="combo = new JComboBox&lt;&gt;(menu);"/>
-			<item value="map"/>
-			<item value="step"/>
+			<item value="search"/>
+			<item value="userid"/>
+			<item value=".username"/>
+			<item value="query"/>
+			<item value="user_id"/>
 		</list>
 		<list key="replacehistory">
+			<item value="context"/>
 			<item value="member"/>
 			<item value="m"/>
 			<item value="admin"/>
@@ -36,14 +44,6 @@
 			<item value="ataft"/>
 			<item value="arrUid"/>
 			<item value="MemberButt"/>
-			<item value=":"/>
-			<item value="FIND_BY_NAME"/>
-			<item value="select"/>
-			<item value="a"/>
-			<item value="array"/>
-			<item value="plus"/>
-			<item value="end"/>
-			<item value="start"/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">

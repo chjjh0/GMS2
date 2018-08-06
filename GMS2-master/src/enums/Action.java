@@ -1,0 +1,6 @@
+package enums;
+
+public enum Action {
+	MOVE, JOIN, CREATE, LIST, LISTFORADMINMAIN, SEARCH,
+	RETRIEVE, COUNT, UPDATE, DELETE, LOGIN
+}
