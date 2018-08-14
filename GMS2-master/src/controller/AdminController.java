@@ -8,36 +8,23 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import command.Carrier;
-import command.Sentry;
+import command.Receiver;
 import enums.Action;
 
 @WebServlet("/admin.do")
 public class AdminController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	public AdminController() {
-        super();
-    }
-
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		Sentry.init(request);
-		switch(Action.valueOf(Sentry.cmd.getAction().toUpperCase())) {
-		case MOVE : 
-			Carrier.forward(request, response);
-			break;
-		case LIST :
-			Carrier.forward(request, response);
-			break;
-		/*case LISTFORADMINMAIN :
-			Carrier.forward(request, response);
-			break;*/
+		Receiver.init(request);
+		switch(Action.valueOf(Receiver.cmd.getAction().toUpperCase())) {
 		case SEARCH : 
 			Carrier.forward(request, response);
 			break;
 		case RETRIEVE : 
 			Carrier.forward(request, response);
 			break;
-		case COUNT :
+		case MOVE : 
 			Carrier.forward(request, response);
 			break;
 		default:

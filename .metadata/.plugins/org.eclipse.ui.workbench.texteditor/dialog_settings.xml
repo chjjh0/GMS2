@@ -19,6 +19,12 @@
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="WEBPATH"/>
+			<item value="path"/>
+			<item value="username"/>
+			<item value="existNext"/>
+			<item value="exisNext"/>
+			<item value="table"/>
 			<item value="getpa"/>
 			<item value="==="/>
 			<item value="=="/>
@@ -28,12 +34,6 @@
 			<item value="idoption"/>
 			<item value="x"/>
 			<item value="form"/>
-			<item value="add"/>
-			<item value="search"/>
-			<item value="userid"/>
-			<item value=".username"/>
-			<item value="query"/>
-			<item value="user_id"/>
 		</list>
 		<list key="replacehistory">
 			<item value="context"/>

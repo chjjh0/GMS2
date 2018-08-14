@@ -2,17 +2,15 @@ package domain;
 
 import lombok.Data;
 
-@Data
+@Data 
 public class ExamBean {
-	private String examSeq, recordSeq, subSeq, memId, month, score;
-	
-	
+	private String examSeq,subSeq,recodeSeq,month,score,memId;
+
+	@Override
 	public String toString() {
-		return "정보 [examSeq = " + examSeq + 
-				" recordSeq = " + recordSeq + 
-				" subSeq = " + subSeq + 
-				" memId = " + memId	+
-				" month = " + month + 
-				" score = " + score + "]";
+		return "ExamBean [examSeq=" + examSeq + ", subSeq=" + subSeq + ", recodeSeq=" + recodeSeq + ", month=" + month
+				+ ", score=" + score + ", memId=" + memId + "]";
 	}
+	
+	
 }

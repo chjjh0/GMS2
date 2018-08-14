@@ -1,78 +1,91 @@
 package enums;
 
+import template.ColumnFinder;
+
 public enum MemberQuery {
-/* MEMID, TEAMID, NAME, AGE, ROLL, PASSWORD, SSN */
-	LOGIN, INSERT_MEMBER, EXIST_ID,
-	COUNT_MEMBER, UPDATE_MEMBER, DELETE_MEMBER,
-	LIST, LISTBYONE, LISTBYSOME;
+	INSERT,
+	LIST,SEARCH,RETRIEVE,COUNT,
+	UPDATE,
+	DELETE,  
+	LOGIN,
+	EXIST_ID;
+	
 	@Override
-	public String toString() {
-		String query="";
+	public String toString() {	
+		String query = "";
 		switch(this) {
-		case LOGIN:
-			query = " SELECT MEMID, "
-					+" PASSWORD "
+		case INSERT : 
+			query = "INSERT INTO MEMBER "
+					//+ ColumnFinder.find(Domain.MEMBER)
+					+ "(MEM_ID, NAME, SSN, PASSWORD, AGE, "
+					+ "GENDER, ROLL, TEAM_ID) "
+					+ "VALUES "
+					+ "(?, ?, ?, ?, ?, ?, ?, ? )";
+			break;
+		
+		case LIST : 
+			query = 
+			  "SELECT * FROM ( "
+			+ "SELECT ROWNUM NO, A.* "
+			+ "FROM ( "
+			+ "SELECT * "
+			+ "FROM %s) A "
+			+ "ORDER BY NO DESC) B "
+			+ "WHERE NO BETWEEN ? AND ? ";
+			break;
+		case SEARCH : 
+			query = 
+			  "SELECT * FROM ( "
+			+ "SELECT ROWNUM NO, A.* "
+			+ "FROM ( "
+			+ "SELECT * "
+			+ "FROM %s "
+			+ "WHERE %s LIKE ? ) A "
+			+ "ORDER BY NO DESC) B "
+			+ "WHERE NO BETWEEN ? AND ? ";
+			break;
+		case RETRIEVE : 
+			query = "SELECT * FROM MEMBER "
+					+ "WHERE MEM_ID LIKE '%s'";
+			query = "SELECT "
+					//+ColumnFinder.find(Domain.MEMBER)
+					+"* "
+					+"FROM MEMBER "
+					+"WHERE MEM_ID "
+					+"LIKE ? ";
+				
+			break;
+		case COUNT : 
+			query = " SELECT COUNT(*) AS count FROM MEMBER";
+			break;
+		case UPDATE : 
+			query = "UPDATE MEMBER "
+				  + "SET %s = ?, "
+				  + "%s = ?, "
+				  + "%s = ? "
+				  + "WHERE MEM_ID LIKE ? ";
+			break;
+		case DELETE : 
+			query = "DELETE FROM MEMBER "
+					+ "WHERE MEM_ID LIKE ? "
+					+ "AND PASSWORD LIKE ? ";
+			break;
+		case LOGIN : 
+			query = "SELECT "
+					//+ColumnFinder.find(Domain.MEMBER)
+					+"* "
 					+" FROM MEMBER "
-					+" WHERE MEMID LIKE '%s' "
-					+" AND PASSWORD LIKE '%s' ";
+					+" WHERE MEM_ID LIKE ? "
+					+" AND PASSWORD LIKE ? ";
 			break;
-		case INSERT_MEMBER:
-			//memId, teamId, name, age, roll, ssn, password
-			query = " INSERT INTO MEMBER "
-					+ " (MEMID, "
-					+ " TEAMID, " 
-					+ " NAME, "
-					+ " AGE, "
-					+ " ROLL, " 
-					+ " SSN, " 
-					+ " PASSWORD,"
-					+ "	GENDER) "
-					+ " VALUES "
-					+ " ('%s', "	//MEMID
-					+ " '%s', "		//TEAMID
-					+ " '%s', "		//NAME
-					+ " 20, "
-					+ " '%s', "		//ROLL
-					+ " '%s', "		//SSN
-					+ " '%s', " 	//PASSWORD
-					+ " 'temp') ";	//GENDER	
-			break;
-		case DELETE_MEMBER:
-			query = " DELETE MEMBER "
-					+ " WHERE NAME LIKE '%s' ";
-			break;
+		
 		case EXIST_ID : 
-			query = " SELECT MEMID "
+			query = "SELECT MEM_ID "
 					+ "FROM MEMBER "
-					+ "WHERE MEMID LIKE '%s'";
-			break;
-		case COUNT_MEMBER :
-			query = " SELECT COUNT(*) AS count FROM MEMBER ";
-			break;
-		case UPDATE_MEMBER :
-			query = " UPDATE MEMBER SET PASSWORD = '%s' " 
-					+ " WHERE MEMID LIKE '%s' "
-					+ " AND PASSWORD <> '%s' ";
-			break;
-		case LIST :
-			//query = " SELECT * FROM MEMBER ";
-			query = " SELECT B.* "
-					+ " FROM "  
-					+ " (SELECT ROWNUM \"SEQ\", A.* " 
-					+ " FROM (SELECT * FROM MEMBER) A) B "    
-					+ " WHERE B.SEQ BETWEEN %s AND %s ";        ;
-			break;
-		case LISTBYSOME :
-			query = " SELECT * FROM MEMBER "
-					+ " WHERE "	+ " %s "
-					+ " LIKE '%s' ";
-			break;
-		case LISTBYONE :
-			query = " SELECT * FROM MEMBER "
-					+ " WHERE MEMID LIKE '%s' ";
+					+ "WHERE MEM_ID LIKE '%s'";
 			break;
 		}
 		return query;
-	} 
-			
+	}
+	
 }

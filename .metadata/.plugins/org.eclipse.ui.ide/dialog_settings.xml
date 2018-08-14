@@ -26,6 +26,8 @@
 		<item value="false" key="WizardProjectsImportPage.STORE_ARCHIVE_SELECTED"/>
 		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
 			<item value="C:\Users\1027\JavaWorkspace\workspace\GMS2-master"/>
+			<item value="C:\Users\1027\JavaWorkspace\workspace\GMS-Model-2-search"/>
+			<item value="C:\Users\1027\JavaWorkspace\workspace\GMS2-Search"/>
 			<item value="C:\Users\1027\JavaWorkspace\workspace\GMS-Model2"/>
 			<item value="C:\Users\1027\JavaWorkspace\workspace\GMSd"/>
 			<item value="C:\Users\1027\JavaWorkspace\jeeworkspace\bankCollection"/>

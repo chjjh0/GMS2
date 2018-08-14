@@ -1,4 +1,4 @@
-package test;
+package Test;
 
 import java.sql.*;
 import java.util.*;
@@ -15,8 +15,8 @@ public class TestDAO {
 			Class.forName(DBConstant.ORACLE_DRIVER);
 			conn = DriverManager .getConnection(
 					DBConstant.CONNECTION_URL, 
-					DBConstant.UID, 
-					DBConstant.PWD);
+					DBConstant.USER_NAME, 
+					DBConstant.PASSWORD);
 			stmt = conn.createStatement();
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -27,11 +27,11 @@ public class TestDAO {
 		List<String> list = new ArrayList<>();
 		try {			
 			String sql = String.format(
-					"SELECT MEMID, AGE FROM MEMBER "
+					"SELECT MEM_ID, AGE FROM MEMBER "
 					);
 			ResultSet rs = stmt.executeQuery(sql);			
 			while(rs.next()) {
-				list.add(rs.getString("MEMID")
+				list.add(rs.getString("MEM_ID")
 						+"/"
 						+rs.getString("AGE"));
 			}

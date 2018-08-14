@@ -5,13 +5,12 @@ import java.util.Map;
 import domain.MemberBean;
 
 public interface MemberService {
-		public boolean login(MemberBean member);
-		public void createMember(MemberBean member);
-		public List<MemberBean> findList();
-		public List<MemberBean> getList(Map<?, ?> param);
-		public List<MemberBean> findBySome(String[] some);
-		public MemberBean findByID(String id);
-		public int countMember();
-		public void updateMember(MemberBean member);
-		public void deleteMember(MemberBean member);
-	}
+	public String add(MemberBean member);
+	public List<MemberBean> search(Map<?,?>param);
+	public MemberBean retrieve(String id);
+	public int count();
+	public void modify(Map<?,?>param);
+	public void remove(MemberBean member);
+	public MemberBean login(MemberBean member);
+	public boolean existId(String id);
+}

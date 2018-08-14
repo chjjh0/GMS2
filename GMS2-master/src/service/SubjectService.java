@@ -4,11 +4,10 @@ import java.util.List;
 import domain.SubjectBean;
 
 public interface SubjectService {
-	public void createSubject(SubjectBean subject);
-	public List<SubjectBean> findList();
-	public List<SubjectBean> findByName(String name);
-	public SubjectBean findByID(String id);
-	public int countSubject();
-	public void updateSubject(SubjectBean subject);
-	public void deleteSubject(SubjectBean subject);	
+	public void createSubject(SubjectBean Subject);
+	public List<SubjectBean> list();
+	public List<SubjectBean> readSome(String word);
+	public SubjectBean readOne(String word);
+	public void updateSubject(SubjectBean Subject);
+	public void deledteSubject(SubjectBean Subject);
 }

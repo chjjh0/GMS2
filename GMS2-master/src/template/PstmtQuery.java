@@ -1,39 +1,69 @@
 package template;
 
 import java.sql.ResultSet;
+import java.util.ArrayList;
 
 import domain.MemberBean;
-import enums.Domain;
-import factory.DatabaseFactory;
+import enums.MemberQuery;
+import factory.DataBaseFactory;
 
 public class PstmtQuery extends QueryTemplate{
 
 	@Override
 	void initialize() {
-		System.out.println("< initialize >");
-		map.put("sql",String.format(
-				" SELECT "
-				+ ColumnFinder.find(Domain.MEMBER)
-				+ " FROM %s "
-				+ " WHERE %s "
-				+ " LIKE ? ",
-				map.get("table"),
-				map.get("column"))
-				);
-		
+		switch((String) map.get("switch")) {
+		case "find":
+			map.put("sql",String.format(
+					" SELECT "
+					+ "*" 
+					//+ ColumnFinder.find(Domain.MEMBER)
+					+ " FROM %s "
+					+ " WHERE %s "
+					+ " LIKE ? ",
+					map.get("table"),
+					map.get("column"))
+					); 
+			break;
+		case "list": 
+			map.put("sql", MemberQuery.LIST.toString());
+			break;
+		case "insert": 
+			map.put("sql", String.format(
+					 "INSERT INTO %s "
+					+ "(MEM_ID, NAME, SSN, PASSWORD, AGE, "
+					+ "GENDER, ROLL, TEAM_ID) "
+					+ "VALUES "
+					+ "('%s','%s','%s','%s','%s', "
+					+ "'%s', '%s', '%s')",
+					map.get("domain"),
+					map.get("memid"),
+					map.get("name"),
+					map.get("pass"),
+					map.get("ssn"),
+					map.get("age"),
+					map.get("gender"),
+					map.get("roll"),
+					map.get("teamid")
+					)
+					);
+			break;
+		}
 	}
 
 	@Override
 	void startPlay() {
-		System.out.println("< startPlay >");
-		System.out.println(map.get("value"));
 		try {
-			pstmt = DatabaseFactory
-					.createDataBase2(map)
-					.getConnection()
+			pstmt = DataBaseFactory.createDataBase2(map).getConnection()
 					.prepareStatement((String) map.get("sql"));
-			pstmt.setString(1, //index 는 1부터
-					"%"+map.get("value").toString()+"%");
+			/*int temp = ((String) map.get("sql")).indexOf("?");
+			if(temp != -1) {
+				pstmt.setString(1, //index 는 1부터
+						"%"+map.get("value").toString()+"%");
+			}*/
+			int size = (((String)map.get("sql")).split("\\?")).length;
+			for(int i = 1;i<size;i++) {
+				pstmt.setString(i, map.get("value"+i).toString());
+			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -42,22 +72,19 @@ public class PstmtQuery extends QueryTemplate{
 	@Override
 	void endPlay() {
 		try {
-			System.out.println("< endPlay >");
 			ResultSet rs = pstmt.executeQuery();
 			MemberBean member = null;
 			while(rs.next()) {
-				System.out.println("end inside");
 				member = new MemberBean();
-				member.setMemId(rs.getString("MEMID"));
-				member.setPassword(rs.getString("PASSWORD"));
-				member.setTeamId(rs.getString("TEAMID"));
+				member.setMemberId(rs.getString("MEM_ID"));
+				member.setPass(rs.getString("PASSWORD"));
+				member.setTeamId(rs.getString("TEAM_ID"));
 				member.setName(rs.getString("NAME"));
 				member.setGender(rs.getString("GENDER"));
 				member.setAge(rs.getString("AGE"));
 				member.setRoll(rs.getString("ROLL"));
 				member.setSsn(rs.getString("SSN"));
 				list.add(member);
-				System.out.println(list);
 			}
 		} catch (Exception e) {
 			e.printStackTrace();

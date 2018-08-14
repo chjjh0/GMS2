@@ -1,24 +1,25 @@
 package command;
 
 import javax.servlet.http.HttpServletRequest;
-
 import service.MemberServiceImpl;
 
-public class CountCommand extends Command{
+public class CountCommand extends Command {
+	int count;
+	public int getCount() {
+		return count;
+	}
 	public CountCommand(HttpServletRequest request) {
 		setRequest(request);
-		setDomain(request.getServletPath()
-				.substring(1, request.getServletPath().indexOf(".")));
 		setAction(request.getParameter("action"));
+		setDomain(request.getServletPath().substring(1, 
+				request.getServletPath().indexOf(".")));
 		setPage(request.getParameter("page"));
 		execute();
 	}
-	
 	@Override
 	public void execute() {
-		System.out.println("< CountCommand >");
 		request.setAttribute("count",
-				MemberServiceImpl.getInstance().countMember());
+				MemberServiceImpl.getInstance().count());
 		super.execute();
 	}
 }

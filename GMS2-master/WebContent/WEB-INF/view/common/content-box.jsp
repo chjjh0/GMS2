@@ -2,7 +2,9 @@
 <div id="content">
 		<div id="content-box">
 			<h1>WELCOME MY HOMEPAGE</h1>
-			<img width="450" height="350" 
-			src="${context}/resources/img/home/3.PNG"></img>
+			<video width="450" height="350" 
+			loop="loop" 
+			autoplay="autoplay" 
+			src="${context}/resources/img/home/egg_and_dog.mp4"></video>
 		</div>
 </div>

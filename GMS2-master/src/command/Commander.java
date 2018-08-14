@@ -8,40 +8,39 @@ public class Commander {
 		Command cmd = null;
 		switch(Action.valueOf(request.getParameter("action")
 				.toUpperCase())) {
-		case MOVE :
-			cmd = new MoveCommand(request);
+		case ADD : 
+			Receiver.cmd = new AddCommand(request);
 			break;
-		case CREATE : 
-			cmd = new CreateCommand(request);
-			break;
-		case LIST : 
-			cmd = new ListCommand(request);
-			break;
-		case LISTFORADMINMAIN : 
-			cmd = new ListForadminMainCommand(request);
-			break;
-		case SEARCH : 
+		case SEARCH: 
+			System.out.println("< Commander_SEARCH >");
 			cmd = new SearchCommand(request);
 			break;
-		case RETRIEVE :
+		case RETRIEVE:
 			cmd = new RetrieveCommand(request);
 			break;
 		case COUNT : 
 			cmd = new CountCommand(request);
 			break;
-		case UPDATE :
-			cmd = new UpdateCommand(request);
+		case MODIFY:
+			cmd = new ModifyCommand(request);
 			break;
-		case DELETE :
-			cmd = new DeleteCommand(request);
+		case REMOVE:
+			cmd = new RemoveCommand(request);
 			break;
-		case LOGIN : 
+		case MOVE:
+			cmd = new MoveCommand(request);
+			break;
+		case LOGIN: 
 			cmd = new LoginCommand(request);
-			//System.out.println(cmd);
+			break;
+		case FILEUPLOAD: 
+			cmd = new FileCommand(request);
 			break;
 		default:
 			break;
 		}
+		System.out.println("< Commander_return 직전 >");
+		System.out.println(cmd.toString());
 		return cmd;
 	}
 

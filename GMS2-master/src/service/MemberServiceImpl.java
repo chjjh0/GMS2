@@ -1,56 +1,50 @@
 package service;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-import dao.*;
-import domain.*;
+import domain.MemberBean;
+import repository.MemberDAOImpl;
 
 public class MemberServiceImpl implements MemberService{
-	public static MemberService getInstance() {return instance;}
 	private static MemberService instance = new MemberServiceImpl();
+	public static MemberService getInstance() {return instance;}
 	private MemberServiceImpl() {}
-	@Override
-	public void createMember(MemberBean member) {
-		MemberDAOImpl.getInstance().insertMember(member);
-	}
-	@Override
-	public List<MemberBean> getList(Map<?, ?> param) {
-		return MemberDAOImpl.getInstance().selectList(param);
-	}
-	@Override
-	public List<MemberBean> findList() {
-		return MemberDAOImpl.getInstance().selectMemberList();
-	}
-
-	@Override
-	public List<MemberBean> findBySome(String[] some) {
-		return MemberDAOImpl.getInstance().selectMemberBySome(some);
-	}
-
-	@Override
-	public MemberBean findByID(String id) {
-		return MemberDAOImpl.getInstance().selectMemberByID(id);
-	}
-
-	@Override
-	public int countMember() {
-		return MemberDAOImpl.getInstance().countMember();
-	}
-
-	@Override
-	public void updateMember(MemberBean member) {
-		MemberDAOImpl.getInstance().updateMember(member);		
-	}
-
-	@Override
-	public void deleteMember(MemberBean member) {
-		MemberDAOImpl.getInstance().deleteMember(member);
-	}
-	@Override
-	public boolean login(MemberBean member) {
-		return ((MemberDAOImpl.getInstance().login(member))!=null);
-	}
 	
+	@Override
+	public String add(MemberBean member) {
+		return MemberDAOImpl.getInstance().insert(member);
+	}
+	@Override
+	public List<MemberBean> search(Map<?, ?> param) {
+		return MemberDAOImpl.getInstance().selectSome(param);
+	}
+	@Override
+	public MemberBean retrieve(String word) {
+		return MemberDAOImpl.getInstance().selectOne(word);
+	}
+	@Override
+	public int count() {
+		return MemberDAOImpl.getInstance().count();
+	}
+	@Override
+	public void modify(Map<?, ?> param) {
+		MemberDAOImpl.getInstance().update(param);
+		
+	}
+	@Override
+	public void remove(MemberBean member) {
+		
+	}
+	@Override
+	public MemberBean login(MemberBean member) {
+		return MemberDAOImpl.getInstance().login(member);
+	}
+	@Override
+	public boolean existId(String id) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+
 }

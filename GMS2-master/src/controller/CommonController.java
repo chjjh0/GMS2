@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import enums.Path;
 import enums.Term;
 
 @WebServlet("/common.do")
@@ -22,18 +23,20 @@ public class CommonController extends HttpServlet {
 			request.getSession()
 			.setAttribute(
 					r.toString().toLowerCase(),
-					request.getContextPath()+
 						((i==0)?
-						"":
-						Term.RESOURCES.toString()
+						request.getContextPath():
+						request.getContextPath()
+						+Term.RESOURCES.toString()
 						+r.toString().toLowerCase()
 						)
 					);
 			i++;
 		}
 		request.getRequestDispatcher(
-				Term.WEBPATH.toString()+
-				Term.MAIN.toString())
+				Term.WEBPATH.toString()
+				+request.getServletPath()
+					.substring(1, request.getServletPath().indexOf("."))
+				+Term.MAIN.toString())
 		.forward(request, response);
 	}
 }

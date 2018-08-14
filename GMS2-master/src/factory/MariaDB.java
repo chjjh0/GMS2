@@ -1,25 +1,13 @@
 package factory;
 
-import java.sql.*;
+import java.sql.Connection;
 
-import pool.DBConstant;
-
-public class MariaDB implements Database{
+public class MariaDB implements DataBase{
 
 	@Override
 	public Connection getConnection() {
-		Connection conn = null;
-		try {
-			Class.forName(DBConstant.MARIADB_DRIVER);
-			conn = DriverManager.getConnection(
-					DBConstant.CONNECTION_URL,
-					DBConstant.UID,
-					DBConstant.PWD
-					);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		return conn;
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

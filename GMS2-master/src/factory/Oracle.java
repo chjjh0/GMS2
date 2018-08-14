@@ -2,7 +2,7 @@ package factory;
 
 import java.sql.*;
 
-public class Oracle implements Database{
+public class Oracle implements DataBase{
 	private Connection conn;
 	private String driver,url,id,pass;
 	public Oracle(String driver,
@@ -14,7 +14,7 @@ public class Oracle implements Database{
 	}
 	@Override
 	public Connection getConnection() {
-		Connection conn = null;
+		conn = null;
 		try {
 			Class.forName(driver);
 			conn = DriverManager.getConnection(
